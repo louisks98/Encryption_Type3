@@ -12,7 +12,7 @@ extern "C"
 
 		for (int i = 0; i < line.size(); i++)
 		{
-			ligneCrypter[i] = line[i] + (i + 1 + valeur);
+			ligneCrypter[i] = line[i] + (i + 1 + valeur);   
 		}
 
 		return ligneCrypter;
