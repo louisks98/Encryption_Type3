@@ -10,13 +10,8 @@
 #define ENCRYPTION_TYPE3_API __declspec(dllimport)
 #endif
 
-// This class is exported from the Encryption_Type3.dll
-class ENCRYPTION_TYPE3_API CEncryption_Type3 {
-public:
-	CEncryption_Type3(void);
-	// TODO: add your methods here.
-};
+#include <string>
+using namespace std;
 
-extern ENCRYPTION_TYPE3_API int nEncryption_Type3;
-
-ENCRYPTION_TYPE3_API int fnEncryption_Type3(void);
+extern "C" ENCRYPTION_TYPE3_API string Encryption(string line, int valeur);
+extern "C" ENCRYPTION_TYPE3_API string Decryption(string line, int valeur);

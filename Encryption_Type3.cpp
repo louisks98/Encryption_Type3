@@ -4,19 +4,34 @@
 #include "stdafx.h"
 #include "Encryption_Type3.h"
 
-
-// This is an example of an exported variable
-ENCRYPTION_TYPE3_API int nEncryption_Type3=0;
-
-// This is an example of an exported function.
-ENCRYPTION_TYPE3_API int fnEncryption_Type3(void)
+extern "C"
 {
-    return 42;
+	ENCRYPTION_TYPE3_API string Encryption(string line, int valeur)
+	{
+		string ligneCrypter = line;
+
+		for (int i = 0; i < line.size(); i++)
+		{
+			ligneCrypter[i] = line[i] + (i + 1 + valeur);
+		}
+
+		return ligneCrypter;
+	}
+
 }
 
-// This is the constructor of a class that has been exported.
-// see Encryption_Type3.h for the class definition
-CEncryption_Type3::CEncryption_Type3()
+extern "C"
 {
-    return;
+	ENCRYPTION_TYPE3_API string Decryption(string line, int valeur)
+	{
+		string ligneDecrypter = line;
+
+		for (int i = 0; i < line.size(); i++)
+		{
+			ligneDecrypter[i] = line[i] - (i + 1 + valeur);
+		}
+
+		return ligneDecrypter;
+	}
 }
+
